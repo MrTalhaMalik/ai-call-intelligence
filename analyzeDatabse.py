@@ -16,7 +16,7 @@ DB_CONFIG = {
     "host": "localhost",
     "database": "call_intelligence_db",
     "user": "postgres",
-    "password": "SBD",
+    "password": "Your Password",
     "port": "5432"
 }
 
