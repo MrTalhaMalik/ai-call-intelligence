@@ -1,0 +1,59 @@
+Speaker 1 (Agent):
+Thank you for calling Horizon Telecom, this is Daniel speaking. How can I assist you today?
+
+Speaker 2 (Customer):
+Yeah, hi. I’m honestly really frustrated right now. My internet has been dropping constantly for the past week, and I work from home. This is unacceptable.
+
+Speaker 1:
+I’m really sorry to hear that. I understand how important a stable connection is, especially if you’re working remotely. Let me pull up your account to take a closer look. May I have your registered phone number?
+
+Speaker 2:
+It’s 555-783-1290.
+
+Speaker 1:
+Thank you. I see your account here. You’re on our Premium Fiber 500 plan. I’m noticing there were some outages reported in your area earlier this week. Are you still experiencing disconnections right now?
+
+Speaker 2:
+Yes. It drops at least three or four times a day. I’ve restarted the router multiple times. Nothing changes. I’m honestly starting to think about switching to Ooredoo because my neighbor says they’ve had zero issues.
+
+Speaker 1:
+I completely understand your frustration. Before we consider that, let’s run a quick line diagnostic from my end. It’ll just take a moment.
+
+Speaker 2:
+Fine.
+
+Speaker 1:
+Thank you for waiting. I’m seeing signal instability on the line, which could indicate either a faulty router or an issue with the fiber connection outside your home.
+
+Speaker 2:
+So what does that mean? Because I can’t keep missing meetings like this. If this isn’t fixed soon, I’m cancelling.
+
+Speaker 1:
+I truly apologize for the inconvenience. What I can do right away is schedule a technician visit within the next 24 hours. Additionally, I can apply a temporary bill credit for the disruption you’ve experienced.
+
+Speaker 2:
+A credit is nice, but I need the service to actually work.
+
+Speaker 1:
+Absolutely. The technician will inspect both the external fiber line and your router. If the router is faulty, we’ll replace it at no charge. Would tomorrow between 9 AM and 12 PM work for you?
+
+Speaker 2:
+Yes, that’s fine. But if this keeps happening after that, I’m done.
+
+Speaker 1:
+That’s completely fair. We’ll make this a priority and monitor your connection after the visit. I’ve also added a follow-up callback request to ensure everything is stable.
+
+Speaker 2:
+Alright. I’ll wait and see.
+
+Speaker 1:
+Thank you for your patience. You’ll receive a confirmation SMS shortly. Is there anything else I can assist you with today?
+
+Speaker 2:
+No, just make sure this gets fixed.
+
+Speaker 1:
+We will. Thank you for calling Horizon Telecom, and again, I apologize for the inconvenience. Have a good day.
+
+Speaker 2:
+Yeah. Bye.
