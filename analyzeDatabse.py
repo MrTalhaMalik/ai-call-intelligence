@@ -1,6 +1,7 @@
 import csv
 import json
 import uuid
+import random
 import psycopg2
 from datetime import datetime
 from openai import OpenAI
@@ -136,7 +137,7 @@ def analyze_call(transcript: str) -> dict:
 # ==============================
 
 def main():
-
+    id = 1
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
 
@@ -156,10 +157,12 @@ def main():
                 analysis = analyze_call(transcript)
 
                 # Generate IDs
-                customer_id = uuid.uuid4()
-                call_id = uuid.uuid4()
-                transcript_id = uuid.uuid4()
-                analysis_id = uuid.uuid4()
+                customer_id = str(uuid.uuid4())
+                call_id = str(uuid.uuid4())
+                transcript_id = str(uuid.uuid4())
+                analysis_id = str(uuid.uuid4())
+
+                id += 1
 
                 # 1️⃣ Insert Customer
                 cursor.execute("""
