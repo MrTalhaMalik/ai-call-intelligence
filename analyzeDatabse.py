@@ -5,6 +5,7 @@ import random
 import psycopg2
 from datetime import datetime
 from openai import OpenAI
+import os
 
 # ==============================
 # CONFIG
@@ -21,7 +22,7 @@ DB_CONFIG = {
     "port": "5432"
 }
 
-client = OpenAI(api_key="")  # Uses OPENAI_API_KEY from environment
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # Uses OPENAI_API_KEY from environment
 
 
 # ==============================
