@@ -21,7 +21,7 @@ DB_CONFIG = {
     "port": "5432"
 }
 
-client = OpenAI(api_key="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")  # Uses OPENAI_API_KEY from environment
+client = OpenAI(api_key="")  # Uses OPENAI_API_KEY from environment
 
 
 # ==============================
