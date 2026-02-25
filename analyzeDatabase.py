@@ -102,6 +102,7 @@ def main():
 
             try:
                 analysis = analyze_call(transcript)
+                print(analysis)
 
                 # Generate IDs
                 customer_id = str(uuid.uuid4())
