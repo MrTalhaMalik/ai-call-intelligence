@@ -12,3 +12,18 @@
 'clarity_score': 0, 
 'professionalism_score': 0, 
 'call_summary': 'Customer inquired about the AC7892 air conditioner unit, specifically the BTU rating and whether it includes a remote control.'}
+
+{'customer_sentiment': 'dissatisfied', 
+'sentiment_score': 1.5, 
+'churn_risk_level': 'high', 
+'churn_confidence': 0.95, 
+'churn_trigger_reasons': ['price increase', 'service quality'], 
+'upsell_detected': True, 
+'upsell_confidence': 0.7, 
+'suggested_product': 'loyalty offers', 
+'objection_category': 'price', 
+'resolution_status': 'cancellation processed', 
+'empathy_score': 4, 
+'clarity_score': 5, 
+'professionalism_score': 5, 
+'call_summary': "The customer called to cancel their service due to dissatisfaction with price increases and service quality. The agent acknowledged the customer's concerns and processed the cancellation while offering loyalty options, but the customer had already decided to switch providers."}
