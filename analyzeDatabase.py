@@ -18,7 +18,7 @@ DB_CONFIG = {
     "host": "localhost",
     "database": "call_intelligence_db",
     "user": "postgres",
-    "password": "Your_Password",
+    "password": "SBD",
     "port": "5432"
 }
 
@@ -39,10 +39,66 @@ def analyze_call(transcript: str) -> dict:
 
     Return ONLY valid JSON.
     Do NOT include explanations.
+
+    
     """
 
     user_prompt = f"""
     Analyze this telecom call transcript.
+
+    Tasks:
+
+    1) customer_sentiment:
+    Must be exactly one of:
+    Positive, Neutral, Frustrated, Angry
+
+    2) sentiment_score:
+    Float between 0 and 1 (higher = more positive sentiment)
+
+    3) churn_risk_level:
+    Must be exactly one of:
+    Low, Medium, High
+
+    4) churn_confidence:
+    Float between 0 and 1
+
+    5) churn_trigger_reasons:
+    Array of short strings.
+    If none, return empty array [].
+
+    6) upsell_detected:
+    Boolean (true or false)
+
+    7) upsell_confidence:
+    Float between 0 and 1.
+    If upsell_detected is false, return 0.
+
+    8) suggested_product:
+    Short string.
+    If no upsell, return null.
+
+    9) objection_category:
+    Must be exactly one of:
+    Price, Network Quality, Billing Issue,
+    Competitor Mention, Service Quality,
+    Technical Issue, None, Other
+
+    10) resolution_status:
+        Must be exactly one of:
+        Resolved, Partially Resolved, Not Resolved
+
+    11) empathy_score:
+        Integer between 1 and 10
+
+    12) clarity_score:
+        Integer between 1 and 10
+
+    13) professionalism_score:
+        Integer between 1 and 10
+
+    14) call_summary:
+        Maximum 3 sentences.
+        Business-focused summary only.
 
     Return JSON with EXACTLY these fields:
 
@@ -87,6 +143,16 @@ def main():
     id = 1
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
+    plan = ["PostPaid", "PrePaid"]
+    phone = [33075330, 55678989, 30897765]
+    agent = ["agent_001", "agent_002", "agent_003"]
+    call_chanel = ["Inbound", "Outbound"]
+
+    planv = random.randint(0, len(plan))
+    phonev = random.randint(0, len(phone))
+    agentv = random.randint(0, len(agent))
+    call_chanelv = random.randint(0, len(call_chanel))
+    
 
     with open(INPUT_CSV, newline="", encoding="utf-8") as infile:
 
@@ -121,7 +187,7 @@ def main():
                 """, (
                     customer_id,
                     str(customer_id)[:8],
-                    "postpaid",
+                    plan[planv],
                     "basic",
                     "active"
                 ))
@@ -135,10 +201,10 @@ def main():
                 """, (
                     call_id,
                     customer_id,
-                    "agent_001",
+                    agent[agentv],
                     datetime.now(),
                     300,
-                    "inbound",
+                    call_chanel[call_chanelv],
                     "completed"
                 ))
 
