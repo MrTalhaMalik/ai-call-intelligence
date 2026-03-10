@@ -130,6 +130,7 @@ def analyze_call(transcript: str) -> dict:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ]
+        #Add Schema
     )
 
     return json.loads(response.choices[0].message.content.strip())
