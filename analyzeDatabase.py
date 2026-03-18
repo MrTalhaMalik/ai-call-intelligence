@@ -18,11 +18,11 @@ DB_CONFIG = {
     "host": "localhost",
     "database": "call_intelligence_db",
     "user": "postgres",
-    "password": "SBD",
+    "password": "",
     "port": "5432"
 }
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # Uses OPENAI_API_KEY from environment
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 # ==============================
