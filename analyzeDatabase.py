@@ -6,6 +6,8 @@ import psycopg2
 from datetime import datetime
 from openai import OpenAI
 import os
+from presidio_analyzer import AnalyzerEngine #For Local REGEX
+from presidio_anonymizer import AnonymizerEngine # FOR LOCAL REGEX
 
 # ==============================
 # CONFIG
