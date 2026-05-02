@@ -26,6 +26,11 @@ DB_CONFIG = {
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+# Reusability — A clean system prompt means you only pass the raw transcript per call, 
+# making the function cleaner and the prompt easier to version/maintain.
+
+# Token efficiency — The model doesn't re-parse instructions on every turn 
+# if you're doing multi-turn or batching.
 
 # ==============================
 # LLM ANALYSIS FUNCTION
@@ -60,7 +65,10 @@ def analyze_call(transcript: str) -> dict:
         """
 
     user_prompt = f"""Transcript:
-    {transcript}"""
+    {transcript}
+
+
+    Respond with valid JSON only. Do not include any text outside the JSON object."""
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
