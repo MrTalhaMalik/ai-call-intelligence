@@ -34,96 +34,33 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 def analyze_call(transcript: str) -> dict:
 
     system_prompt = """
-    You are an AI call analysis engine for a telecom company.
+        You are an AI call analysis engine for a telecom company.
 
-    Speaker 1 is the Agent.
-    Speaker 2 is the Customer.
+        Speaker 1 is the Agent. Speaker 2 is the Customer.
 
-    Return ONLY valid JSON.
-    Do NOT include explanations.
+        Analyze the provided call transcript and return ONLY valid JSON — no explanations, no markdown.
 
-    
-    """
+        Return JSON with EXACTLY these fields:
+        {
+        "customer_sentiment": "",        // One of: Positive, Neutral, Frustrated, Angry
+        "sentiment_score": 0.0,          // Float 0-1, higher = more positive
+        "churn_risk_level": "",          // One of: [Low, Medium, High]
+        "churn_confidence": 0.0,         // Float 0-1
+        "churn_trigger_reasons": [],     // Array of short strings, [] if none
+        "upsell_detected": false,        // Boolean
+        "upsell_confidence": 0.0,        // Float 0-1, 0 if upsell_detected is false
+        "suggested_product": null,       // Short string or null if no upsell
+        "objection_category": "",        // One of: [Price, Network Quality, Billing Issue,Competitor Mention, Service Quality,echnical Issue, None, Other]
+        "resolution_status": "",         // One of: [Resolved, Partially Resolved, Not Resolved]
+        "empathy_score": 0,              // Integer 1-10
+        "clarity_score": 0,              // Integer 1-10
+        "professionalism_score": 0,      // Integer 1-10
+        "call_summary": ""               // Max 3 sentences, business-focused
+        }
+        """
 
-    user_prompt = f"""
-    Analyze this telecom call transcript.
-
-    Tasks:
-
-    1) customer_sentiment:
-    Must be exactly one of:
-    Positive, Neutral, Frustrated, Angry
-
-    2) sentiment_score:
-    Float between 0 and 1 (higher = more positive sentiment)
-
-    3) churn_risk_level:
-    Must be exactly one of:
-    Low, Medium, High
-
-    4) churn_confidence:
-    Float between 0 and 1
-
-    5) churn_trigger_reasons:
-    Array of short strings.
-    If none, return empty array [].
-
-    6) upsell_detected:
-    Boolean (true or false)
-
-    7) upsell_confidence:
-    Float between 0 and 1.
-    If upsell_detected is false, return 0.
-
-    8) suggested_product:
-    Short string.
-    If no upsell, return null.
-
-    9) objection_category:
-    Must be exactly one of:
-    Price, Network Quality, Billing Issue,
-    Competitor Mention, Service Quality,
-    Technical Issue, None, Other
-
-    10) resolution_status:
-        Must be exactly one of:
-        Resolved, Partially Resolved, Not Resolved
-
-    11) empathy_score:
-        Integer between 1 and 10
-
-    12) clarity_score:
-        Integer between 1 and 10
-
-    13) professionalism_score:
-        Integer between 1 and 10
-
-    14) call_summary:
-        Maximum 3 sentences.
-        Business-focused summary only.
-
-    Return JSON with EXACTLY these fields:
-
-    {{
-    "customer_sentiment": "",
-    "sentiment_score": 0.0,
-    "churn_risk_level": "",
-    "churn_confidence": 0.0,
-    "churn_trigger_reasons": [],
-    "upsell_detected": false,
-    "upsell_confidence": 0.0,
-    "suggested_product": null,
-    "objection_category": "",
-    "resolution_status": "",
-    "empathy_score": 0,
-    "clarity_score": 0,
-    "professionalism_score": 0,
-    "call_summary": ""
-    }}
-
-    Transcript:
-    {transcript}
-    """
+    user_prompt = f"""Transcript:
+    {transcript}"""
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
