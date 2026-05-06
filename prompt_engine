@@ -1,0 +1,99 @@
+import psycopg2
+
+# ==============================
+# DB CONFIG
+# ==============================
+
+DB_CONFIG = {
+    "host": "localhost",
+    "database": "call_intelligence_db",
+    "user": "postgres",
+    "password": "SBD",
+    "port": "5432"
+}
+
+# ==============================
+# FETCH PROMPT FUNCTION
+# ==============================
+
+def fetch_prompt():
+    conn = psycopg2.connect(**DB_CONFIG)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT allowed_values FROM prompt_config where field_name = 'objection_category'")
+    result = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    if result:
+        return result[0]
+    else:
+        return None
+    
+
+def update_prompt(new_prompt):
+    conn = psycopg2.connect(**DB_CONFIG)
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE prompt_config
+        SET allowed_values = {new_prompt}
+        WHERE field_name = 'objection_category';
+    """)
+
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+# ==============================
+# MAIN
+# ==============================
+
+if __name__ == "__main__":
+    
+    # 1. Fetch current prompt
+    current_prompt = fetch_prompt()
+    print("Current Prompt:\n", current_prompt)
+
+    # 2. Update prompt (example)
+    new_prompt = "['Price']"
+
+    update_prompt(new_prompt)
+    print("\n✅ Prompt updated.\n")
+
+    # 3. Fetch again to confirm
+    updated_prompt = fetch_prompt()
+    print("Updated Prompt:\n", updated_prompt)
+
+
+    sys_prompt = """
+    You are an AI call analysis engine for a telecom company.
+
+    Speaker 1 is the Agent. Speaker 2 is the Customer.
+
+    Analyze the provided call transcript and return ONLY valid JSON — no explanations, no markdown.
+
+    Return JSON with EXACTLY these fields:
+    {
+    "customer_sentiment": "",        // One of: Positive, Neutral, Frustrated, Angry
+    "sentiment_score": 0.0,          // Float 0-1, higher = more positive
+    "churn_risk_level": "",          // One of: [Low, Medium, High]
+    "churn_confidence": 0.0,         // Float 0-1
+    "churn_trigger_reasons": [],     // Array of short strings, [] if none
+    "upsell_detected": false,        // Boolean
+    "upsell_confidence": 0.0,        // Float 0-1, 0 if upsell_detected is false
+    "suggested_product": null,       // Short string or null if no upsell
+    "objection_category": "",        // One of: {updated_prompt}
+    "resolution_status": "",         // One of: [Resolved, Partially Resolved, Not Resolved]
+    "empathy_score": 0,              // Integer 1-10
+    "clarity_score": 0,              // Integer 1-10
+    "professionalism_score": 0,      // Integer 1-10
+    "call_summary": ""               // Max 3 sentences, business-focused
+    }
+    """
+
+
+    print(sys_prompt)
+
