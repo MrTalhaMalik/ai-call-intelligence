@@ -17,11 +17,11 @@ INPUT_CSV = "transcripts.csv"
 
 # PostgreSQL connection
 DB_CONFIG = {
-    "host": "localhost",
-    "database": "call_intelligence_db",
-    "user": "postgres",
-    "password": "SBD",
-    "port": "5432"
+    "host": os.getenv("DB_HOST", "localhost"),
+    "database": os.getenv("DB_NAME", "call_intelligence_db"),
+    "user": os.getenv("DB_USER", "postgres"),
+    "password": os.getenv("DB_PASSWORD"),
+    "port": os.getenv("DB_PORT", "5432")
 }
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -94,13 +94,8 @@ def main():
     plan = ["PostPaid", "PrePaid"]
     phone = [33075330, 55678989, 30897765]
     agent = ["agent_001", "agent_002", "agent_003"]
-    call_chanel = ["Inbound", "Outbound"]
+    call_channel = ["Inbound", "Outbound"]
 
-    planv = random.randint(0, len(plan))
-    phonev = random.randint(0, len(phone))
-    agentv = random.randint(0, len(agent))
-    call_chanelv = random.randint(0, len(call_chanel))
-    
 
     with open(INPUT_CSV, newline="", encoding="utf-8") as infile:
 
@@ -113,6 +108,12 @@ def main():
             if not transcript:
                 print("⚠️ Empty transcript, skipping")
                 continue
+
+            # Generate random values per call
+            planv = random.randint(0, len(plan) - 1)
+            phonev = random.randint(0, len(phone) - 1)
+            agentv = random.randint(0, len(agent) - 1)
+            call_channelv = random.randint(0, len(call_channel) - 1)
 
             try:
                 analysis = analyze_call(transcript)
@@ -152,7 +153,7 @@ def main():
                     agent[agentv],
                     datetime.now(),
                     300,
-                    call_chanel[call_chanelv],
+                    call_channel[call_channelv],
                     "completed"
                 ))
 

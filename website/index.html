@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoxIntel AI | Call Intelligence & Churn Prevention System</title>
+  <meta name="description" content="VoxIntel is an AI-powered call intelligence platform that analyzes call center recordings to flag churn risk, grade agent performance, and automate ticket raising.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Background Gradients -->
+  <div class="bg-gradients">
+    <div class="bg-gradient-orb orb-1"></div>
+    <div class="bg-gradient-orb orb-2"></div>
+    <div class="bg-gradient-orb orb-3"></div>
+  </div>
+  <div class="bg-grid"></div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo" id="nav-logo">
+        <div class="logo-icon">V</div>
+        <span>VoxIntel<span style="color: var(--secondary);">AI</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features" id="link-features">Features</a></li>
+        <li><a href="#simulator" id="link-simulator">Interactive Demo</a></li>
+        <li><a href="#roadmap" id="link-roadmap">Roadmap</a></li>
+        <li><a href="#contact" id="link-contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;" id="cta-header-demo">Request Demo</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Active Phase: Churn Protection</div>
+      <h1 class="hero-title">
+        Turn Call Logs Into <br>
+        <span class="gradient-text-accent">Churn Defenses</span>
+      </h1>
+      <p class="hero-desc">
+        VoxIntel transcribes call center conversations, extracts customer sentiment, flags high-risk churn indicators, and evaluates agent compliance—storing structured insights directly into your database for real-time reporting.
+      </p>
+      <div class="hero-actions">
+        <a href="#simulator" class="btn btn-primary" id="cta-hero-demo">Try Live Simulator</a>
+        <a href="#roadmap" class="btn btn-secondary" id="cta-hero-roadmap">View AI Roadmap</a>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <!-- Floating CSS Dashboard Mockup -->
+      <div class="dashboard-mockup glass-panel">
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+          </div>
+          <div class="mockup-title">VoxIntel Live Analytics</div>
+          <div class="mockup-badge">2 Churn Alerts</div>
+        </div>
+        
+        <div class="mockup-grid">
+          <div class="mockup-card">
+            <span class="mockup-card-label">Total Calls</span>
+            <span class="mockup-card-val">1,248</span>
+            <span class="mockup-card-trend trend-up">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 7-7 7 7M12 5v14"/></svg>
+              +12% this week
+            </span>
+          </div>
+          <div class="mockup-card">
+            <span class="mockup-card-label">Avg Sentiment</span>
+            <span class="mockup-card-val">0.72</span>
+            <span class="mockup-card-trend trend-down">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m19 12-7 7-7-7M12 19V5"/></svg>
+              -3% churn risk
+            </span>
+          </div>
+        </div>
+        
+        <div class="mockup-list">
+          <div class="mockup-list-item risk-high">
+            <div class="item-left">
+              <span class="item-name">John Moore (Acc. #547812)</span>
+              <span class="item-reason">Price Objection & Competitor Mention</span>
+            </div>
+            <span class="mockup-badge" style="background: rgba(244,63,94,0.1); color: var(--rose);">CRITICAL</span>
+          </div>
+          <div class="mockup-list-item" style="border-left-color: var(--amber);">
+            <div class="item-left">
+              <span class="item-name">Mark Johnson</span>
+              <span class="item-reason">Billing Discrepancy (Resolved)</span>
+            </div>
+            <span class="mockup-badge" style="background: rgba(245,158,11,0.1); color: var(--amber); border-color: rgba(245,158,11,0.2);">MEDIUM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Section -->
+  <section class="section-container" id="features">
+    <div class="section-header">
+      <span class="section-subtitle">Operational Features</span>
+      <h2 class="section-title">Analyze Calls. Uncover Vulnerabilities.</h2>
+      <p class="section-desc">
+        VoxIntel plugs directly into your telephone audio recordings or live feeds, running deep transcription and NLP evaluation to build structural customer metadata automatically.
+      </p>
+    </div>
+    
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="feature-card glass-panel" id="feature-1">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+        </div>
+        <h3 class="feature-title">Speech-to-Text Pipeline</h3>
+        <p>Converts call recordings into clean, speaker-labeled text transcripts with precision, supporting complex vocabulary and jargon.</p>
+      </div>
+      
+      <!-- Feature 2 -->
+      <div class="feature-card glass-panel" id="feature-2">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>
+        </div>
+        <h3 class="feature-title">LLM Structured Extraction</h3>
+        <p>Uses customized prompts to isolate sentiment, churn risk markers (e.g. Price, Network, Billing), and agent communication scoring.</p>
+      </div>
+      
+      <!-- Feature 3 -->
+      <div class="feature-card glass-panel" id="feature-3">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+        </div>
+        <h3 class="feature-title">BI and Database Sync</h3>
+        <p>Saves extracted dimensions directly into PostgreSQL, exposing data models optimized for dashboard integrations like Power BI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Call Simulator Section -->
+  <section class="section-container" id="simulator">
+    <div class="section-header">
+      <span class="section-subtitle">Live Demonstration</span>
+      <h2 class="section-title">Simulate Call Analysis</h2>
+      <p class="section-desc">
+        Select a real transcript from our historical data to witness how VoxIntel extracts analytics, highlights risks, and evaluates professionalism in seconds.
+      </p>
+    </div>
+    
+    <div class="simulator-container">
+      <!-- Left Panel: Call Selector & Transcription Feed -->
+      <div class="transcripts-panel">
+        <span class="panel-header">1. Select a Call Transcript</span>
+        <div class="selector-box">
+          <button class="transcript-btn active" id="btn-transcript-1">
+            <div class="btn-tag-row">
+              <span class="transcript-btn-title">Mark Johnson</span>
+              <span class="transcript-btn-meta">Data Package Issue</span>
+            </div>
+            <span class="transcript-btn-desc">Customer reports discrepancy in high-speed mobile data usage.</span>
+          </button>
+          
+          <button class="transcript-btn" id="btn-transcript-2">
+            <div class="btn-tag-row">
+              <span class="transcript-btn-title">John Moore</span>
+              <span class="transcript-btn-meta">Cancellation Request</span>
+            </div>
+            <span class="transcript-btn-desc">Customer calls to terminate contract due to competitor offers.</span>
+          </button>
+          
+          <button class="transcript-btn" id="btn-transcript-3">
+            <div class="btn-tag-row">
+              <span class="transcript-btn-title">John Moore (Inquiry)</span>
+              <span class="transcript-btn-meta">Billing Check-in</span>
+            </div>
+            <span class="transcript-btn-desc">Customer asks about upcoming charges and discount duration.</span>
+          </button>
+        </div>
+        
+        <span class="panel-header" style="margin-top: 10px;">2. Conversation Log</span>
+        <div class="transcript-scroll-area" id="transcription-feed">
+          <!-- Populated by JS -->
+        </div>
+        
+        <button class="btn btn-accent" style="width: 100%; font-size: 1.05rem;" id="btn-run-analysis">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Run LLM Analysis
+        </button>
+      </div>
+      
+      <!-- Right Panel: Dynamic Extraction Results Dashboard -->
+      <div class="analysis-panel glass-panel">
+        <!-- Spinner Loading Overlay -->
+        <div class="sim-loading" id="simulator-loader">
+          <div class="spinner"></div>
+          <span style="font-weight: 600; color: var(--text-primary);">Processing transcript through LLM engine...</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Parsing sentiment, risk indices, and compliance scores</span>
+        </div>
+        
+        <div id="simulator-placeholder-state" style="text-align: center; padding: 40px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--text-muted); opacity: 0.6;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <h3 style="font-size: 1.25rem;">Analytics Dashboard Ready</h3>
+          <p style="font-size: 0.9rem; max-width: 320px;">Click the <strong>Run LLM Analysis</strong> button to populate this dashboard with structured call metrics.</p>
+        </div>
+        
+        <div id="simulator-result-state" style="display: none; flex-direction: column; gap: 20px;">
+          <!-- Section A: Overview & Churn Risk -->
+          <div class="sim-results-grid">
+            <!-- Churn Risk Level Card -->
+            <div class="analysis-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <span class="analysis-title">Churn Risk Assessment</span>
+              <div class="risk-indicator">
+                <div class="risk-circle" id="risk-circle-indicator">🔥</div>
+                <div class="risk-details">
+                  <span class="risk-level-name" id="val-risk-level">HIGH</span>
+                  <span class="risk-confidence-text">Confidence: <span id="val-risk-confidence">92%</span></span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Sentiment Score Card -->
+            <div class="analysis-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <span class="analysis-title">Customer Sentiment</span>
+              <div class="sentiment-box">
+                <span class="sentiment-emoji" id="val-sentiment-emoji">😠</span>
+                <div>
+                  <span class="sentiment-text" id="val-sentiment">Angry</span>
+                  <div class="sentiment-score">Score: <span id="val-sentiment-score">0.15</span>/1.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Section B: Call Summary -->
+          <div class="analysis-card">
+            <span class="analysis-title">LLM Executive Call Summary</span>
+            <p class="summary-text" id="val-summary">
+              Customer is expressing frustration regarding data caps. Agent successfully applied credits and sorted out system errors, improving customer outlook.
+            </p>
+          </div>
+          
+          <!-- Section C: Triggers & Objection Categories -->
+          <div class="sim-results-grid">
+            <div class="analysis-card">
+              <span class="analysis-title">Objection Category</span>
+              <div class="sentiment-text" id="val-objection" style="font-size: 1rem; color: var(--text-primary);">Competitor Mention</div>
+            </div>
+            
+            <div class="analysis-card">
+              <span class="analysis-title">Resolution Status</span>
+              <div class="sentiment-text" id="val-resolution" style="font-size: 1rem; color: var(--text-primary);">Resolved</div>
+            </div>
+          </div>
+          
+          <div class="analysis-card">
+            <span class="analysis-title">Detected Churn Triggers</span>
+            <div class="tags-container" id="val-triggers-tags">
+              <span class="tag trigger-tag">Competitor Offer</span>
+              <span class="tag trigger-tag">Price Increase</span>
+            </div>
+          </div>
+          
+          <!-- Section D: Agent Compliance / Professionalism Scores -->
+          <div class="analysis-card">
+            <span class="analysis-title">Agent Quality Scorecard</span>
+            <div class="metrics-list">
+              <div class="metric-bar-group">
+                <div class="metric-bar-label">
+                  <span>Professionalism</span>
+                  <span class="metric-bar-val"><span id="val-agent-prof">9</span>/10</span>
+                </div>
+                <div class="bar-bg"><div class="bar-fill" id="fill-agent-prof"></div></div>
+              </div>
+              
+              <div class="metric-bar-group">
+                <div class="metric-bar-label">
+                  <span>Empathy & Listening</span>
+                  <span class="metric-bar-val"><span id="val-agent-emp">8</span>/10</span>
+                </div>
+                <div class="bar-bg"><div class="bar-fill" id="fill-agent-emp"></div></div>
+              </div>
+              
+              <div class="metric-bar-group">
+                <div class="metric-bar-label">
+                  <span>Clarity & Communication</span>
+                  <span class="metric-bar-val"><span id="val-agent-clar">9</span>/10</span>
+                </div>
+                <div class="bar-bg"><div class="bar-fill" id="fill-agent-clar"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Roadmap & Ticketing Simulator Section -->
+  <section class="section-container" id="roadmap">
+    <div class="roadmap-box glass-panel">
+      <div class="roadmap-grid">
+        <!-- Roadmap copywriting -->
+        <div class="roadmap-info">
+          <span class="section-subtitle">Future Capabilities</span>
+          <h2 class="section-title" style="margin-top: 12px; margin-bottom: 20px;">AI Integration Roadmap</h2>
+          <p style="margin-bottom: 24px;">
+            We are building beyond passive reporting. Our roadmap involves translating intelligence into instant operations—automating ticket pipelines and building conversational customer voice interfaces.
+          </p>
+          
+          <div class="roadmap-phases">
+            <div class="phase-card active">
+              <div class="phase-number">Phase 1 (Current)</div>
+              <h3 class="phase-title">Offline Analysis & Churn Alerts</h3>
+              <p class="phase-desc">Pipeline transcribes agent records, extracts risk structures, updates PostgreSQL, and populates Power BI dashboards.</p>
+            </div>
+            
+            <div class="phase-card" id="phase-2-card">
+              <div class="phase-number">Phase 2 (Developing)</div>
+              <h3 class="phase-title">Smart Voice-to-Ticket System</h3>
+              <p class="phase-desc">LLM detects caller commands in real-time, categorizes problems, raises support tickets, and drafts summaries automatically.</p>
+            </div>
+            
+            <div class="phase-card" id="phase-3-card">
+              <div class="phase-number">Phase 3 (Long-term)</div>
+              <h3 class="phase-title">Empathetic Voice Chatbots</h3>
+              <p class="phase-desc">Deploy fine-tuned AI speech agents capable of active retention management and live problem resolution.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Live Voice-to-Ticket Simulator -->
+        <div class="ticket-simulator">
+          <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+            <h3 style="font-size: 1.1rem; font-weight: 700;">Phase 2 Simulator: Voice Commands</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Test our upcoming automatic CRM ticketing capability.</p>
+          </div>
+          
+          <div class="voice-input-zone">
+            <button class="mic-btn" id="btn-voice-mic">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            </button>
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);" id="lbl-voice-status">Select a voice trigger command below:</span>
+            
+            <div class="wave-animation" id="voice-wave-anim">
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+            </div>
+            
+            <div class="preset-commands">
+              <button class="preset-cmd-btn" id="btn-preset-1">"Problem with Hala65"</button>
+              <button class="preset-cmd-btn" id="btn-preset-2">"Cancel my contract"</button>
+            </div>
+          </div>
+          
+          <!-- Auto-generated Ticket Result -->
+          <div class="ticket-draft-card" id="sim-ticket-card">
+            <div class="ticket-header">
+              <span class="ticket-id" id="val-ticket-id">TICKET #VOX-8842</span>
+              <span class="ticket-badge">Auto Generated</span>
+            </div>
+            
+            <div class="sim-results-grid" style="gap: 12px;">
+              <div class="ticket-field">
+                <span class="ticket-label">Classification</span>
+                <span class="ticket-value" id="val-ticket-class">Mobile Package Discrepancy</span>
+              </div>
+              <div class="ticket-field">
+                <span class="ticket-label">Priority</span>
+                <span class="ticket-priority priority-high" id="val-ticket-priority">
+                  <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:var(--rose);"></span>
+                  High
+                </span>
+              </div>
+            </div>
+            
+            <div class="ticket-field">
+              <span class="ticket-label">Transcript Snippet</span>
+              <span class="ticket-value" style="font-style: italic;" id="val-ticket-voice">"Customer stated they have a problem with their Hala65 package..."</span>
+            </div>
+            
+            <div class="ticket-field">
+              <span class="ticket-label">Action Summary & Summary Credit</span>
+              <span class="ticket-value" id="val-ticket-action">Raise billing review ticket. Route to telecom accounts team. Schedule follow-up.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture / Contact Section -->
+  <section class="section-container" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div>
+          <span class="section-subtitle">Get in Touch</span>
+          <h2 class="section-title" style="margin-top: 12px; margin-bottom: 16px;">Scale Your Call Analytics</h2>
+          <p>
+            Ready to integrate automated churn scoring and LLM diagnostics with your call center operations? Talk to our integration team.
+          </p>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h4 class="contact-item-title">Enterprise Consultations</h4>
+            <p class="contact-item-desc">Discuss database capacity, prompt adjustments, and customized Power BI reports.</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </div>
+          <div>
+            <h4 class="contact-item-title">Direct Sandbox Setup</h4>
+            <p class="contact-item-desc">Get access to our Python transcription wrapper and test databases.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form glass-panel" id="form-container">
+        <h3 class="form-title">Request Demo Access</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 8px;">Fill in details below and an engineer will set up a trial container for your team.</p>
+        
+        <form id="contact-demo-form" onsubmit="return false;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div class="form-group">
+              <label for="input-first-name">First Name</label>
+              <input type="text" id="input-first-name" class="form-input" placeholder="Alex" required>
+            </div>
+            <div class="form-group">
+              <label for="input-last-name">Last Name</label>
+              <input type="text" id="input-last-name" class="form-input" placeholder="Smith" required>
+            </div>
+          </div>
+          
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label for="input-email">Work Email</label>
+            <input type="email" id="input-email" class="form-input" placeholder="alex@company.com" required>
+          </div>
+          
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label for="input-company">Company Name</label>
+            <input type="text" id="input-company" class="form-input" placeholder="Global Telecom Corp" required>
+          </div>
+          
+          <div class="form-group" style="margin-bottom: 24px;">
+            <label for="input-message">How can we help you?</label>
+            <textarea id="input-message" class="form-input" placeholder="Tell us about your call volume or integration needs..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem;" id="btn-submit-contact">
+            Request Demo Sandbox
+          </button>
+        </form>
+      </div>
+      
+      <!-- Thank You Message -->
+      <div class="contact-form glass-panel form-success-message" id="success-container">
+        <div class="success-icon-large">✓</div>
+        <h3 style="font-size: 1.5rem; font-weight: 800; font-family: var(--font-title);">Request Submitted!</h3>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 320px; margin: 0 auto;">
+          Thank you for reaching out. A VoxIntel solutions engineer will contact you via email within 24 hours to coordinate your trial database setup.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="font-size: 1.2rem;">
+          <div class="logo-icon" style="width: 26px; height: 26px; font-size: 0.8rem;">V</div>
+          <span>VoxIntel<span style="color: var(--secondary);">AI</span></span>
+        </a>
+        <span class="footer-desc">© 2026 VoxIntel AI. All rights reserved. B2B Call Center Intel Platform.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#simulator">Simulator</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Javascript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

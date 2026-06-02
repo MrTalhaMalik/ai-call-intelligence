@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 from openai import OpenAI
 
 # ==============================
@@ -9,7 +10,7 @@ from openai import OpenAI
 INPUT_CSV = "transcripts.csv"
 OUTPUT_CSV = "analyzed_calls.csv"
 
-client = OpenAI(api_key="YOUR_OPENAI_API_KEY")  # Replace with your OpenAI API key
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # ==============================
 # LLM ANALYSIS FUNCTION
@@ -196,28 +197,20 @@ def main():
                         raise ValueError(f"Missing key: {key}")
 
 
-                # Flatten nested JSON for CSV
+                # Map flat JSON keys to CSV columns
                 row["customer_sentiment"] = analysis.get("customer_sentiment")
                 row["sentiment_score"] = analysis.get("sentiment_score")
-
-                churn = analysis.get("churn_risk", {})
-                row["churn_risk_level"] = churn.get("churn_risk_level")
-                row["churn_confidence"] = churn.get("churn_confidence")
-                row["churn_trigger_reasons"] = json.dumps(churn.get("churn_trigger_reasons"))
-
-                upsell = analysis.get("upsell_opportunity", {})
-                row["upsell_detected"] = upsell.get("upsell_detected")
-                row["upsell_confidence"] = upsell.get("upsell_confidence")
-                row["suggested_product"] = upsell.get("suggested_product")
-
+                row["churn_risk_level"] = analysis.get("churn_risk_level")
+                row["churn_confidence"] = analysis.get("churn_confidence")
+                row["churn_trigger_reasons"] = json.dumps(analysis.get("churn_trigger_reasons", []))
+                row["upsell_detected"] = analysis.get("upsell_detected")
+                row["upsell_confidence"] = analysis.get("upsell_confidence")
+                row["suggested_product"] = analysis.get("suggested_product")
                 row["objection_category"] = analysis.get("objection_category")
                 row["resolution_status"] = analysis.get("resolution_status")
-
-                agent_scores = analysis.get("agent_scores", {})
-                row["empathy_score"] = agent_scores.get("empathy_score")
-                row["clarity_score"] = agent_scores.get("clarity_score")
-                row["professionalism_score"] = agent_scores.get("professionalism_score")
-
+                row["empathy_score"] = analysis.get("empathy_score")
+                row["clarity_score"] = analysis.get("clarity_score")
+                row["professionalism_score"] = analysis.get("professionalism_score")
                 row["call_summary"] = analysis.get("call_summary")
 
                 writer.writerow(row)
