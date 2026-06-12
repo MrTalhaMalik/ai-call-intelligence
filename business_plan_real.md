@@ -37,19 +37,40 @@ I built an AI system that takes a recorded customer service call, transcribes it
 - Is this customer about to churn? (Low / Medium / High risk + confidence score)
 - Why are they at risk? (Price, network, competitor, billing, etc.)
 - How did the customer feel? (Positive / Neutral / Frustrated / Angry)
-- Did the agent do a good job? (Empathy, Clarity, Professionalism — scored 1–10)
+- How did the agent perform? (Empathy, Clarity, Professionalism — scored 1–10)
 - Was the issue actually resolved?
 - Was there an opportunity to upsell something?
 - What happened in this call? (3-sentence plain-English summary)
 
-**It works.** I tested it on real telecom-style call data. It processes one call in under 20 seconds and costs approximately QAR 0.05 per call in API fees.
+**It works. And I can show it to anyone, right now, in a browser.**
 
-I also built:
-- A PostgreSQL pipeline that stores every analysis result in a structured database
-- A Power BI dashboard that visualizes churn risk, sentiment trends, and agent performance
-- A web demo that lets someone watch the system analyze a call live
+### The Full Inventory (All Built Solo)
 
-Everything was built by me, alone.
+**1. The AI Backend Pipeline**
+- Faster-Whisper transcription engine (converts audio to text, runs locally)
+- GPT-4o-mini LLM analysis (extracts 14 structured intelligence fields per call)
+- Microsoft Presidio PII redaction (strips names and phone numbers locally before any API call — PDPL compliant)
+- PostgreSQL batch pipeline (stores every result in a structured database)
+- Power BI dashboard (visualizes churn risk, sentiment trends, agent scores)
+- Cost: approximately QAR 0.05 per call in API fees
+
+**2. The Live Demo Website**
+A professional, fully designed marketing and demo site built from scratch:
+- Hero section with a live animated dashboard mockup showing churn alerts and sentiment scores
+- Interactive call simulator: select from 3 real telecom transcripts (billing dispute, cancellation request, routine inquiry), click "Run Analysis," watch the AI process the call and populate a real results dashboard
+- Results include: churn risk level + confidence, sentiment score, executive call summary, objection category, resolution status, churn trigger tags, and animated agent scorecard bars
+- Lead capture form with success state for inbound demo requests
+
+**3. The Voice-to-Ticket System (Phase 2 — Already Built and Demoed)**
+This is live and working as an interactive demo on the website:
+- A visitor selects a voice command: *"Problem with Hala65"* or *"Cancel my contract"*
+- The system classifies it and auto-generates a CRM support ticket in real time
+- The ticket includes: ticket ID, issue classification, priority level (High / Critical), transcript snippet, and a recommended action summary
+- This demonstrates the next phase of the product: real-time voice → CRM automation
+
+This is not a concept or a wireframe. It is a live, interactive demonstration that any decision-maker can experience in 60 seconds without installing anything.
+
+Everything above was built by me, alone.
 
 ---
 
@@ -249,5 +270,5 @@ After a pilot demonstrates real results, I would welcome a conversation with the
 
 ---
 
-*Talha Malik | talhapk2021@gmail.com | github.com/MrTalhaMalik*
+*Talha Malik | malik.7.talha@gmail.com | github.com/MrTalhaMalik*
 *June 2026 — This is the real plan.*
